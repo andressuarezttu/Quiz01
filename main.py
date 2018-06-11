@@ -40,7 +40,7 @@ Details:
     
 
 
-  #Below are my test variables which are initialized to test the function matrixProduct
+  #Below are my test variables which are initialized to test the function matVec
 testmatrix1 = [[1,2,3],[4,5,6],[7,8,9]]
 testvector1 = [2,1,3]
 
