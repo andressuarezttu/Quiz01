@@ -15,27 +15,30 @@ Details:
   
   First we check to see if the matrix is compatible. For example if the vector has 3 elements (or rows), the matrix must have 3 lists inside of it (or 3 columns).
   We compare the length of the matrix with the length of the vector to determine this part.
-
   Once we determine that the matrix is compatible, we initialize an empty list that will store our "solution".
   The product is calculated using item += matrix[j][i] + vector[j] and is temporarily stored in the "result" list where the sum of each product is the 3rd element in "result".
   The sum is then appended into our solution list which gives us a vector (3x1) equivalent to matrix*vector
   '''
-  #vector compatibility check
-  if len(matrix) == len(vector):
-    #solution stores our final answer
-    solution = []
-    for i in range(len(matrix)):
-      #creating temporary list to product calculations
-      result = []
-      item = 0
-      for j in range(len(vector)):
-        #adding the product result of the matrix vector multiplication
-        item += matrix[j][i] * vector[j]
-        result.append(item)
-      solution.append(result[2])
-    return solution
+  #matrix compatibility check
+  if len(matrix) == 3 and type(matrix[0]) != int:
+    #vector compatibility check
+    if len(matrix) == len(vector):
+      #solution stores our final answer
+      solution = []
+      for i in range(len(matrix)):
+        #creating temporary list to product calculations
+        result = []
+        item = 0
+        for j in range(len(vector)):
+          #adding the product result of the matrix vector multiplication
+          item += matrix[j][i] * vector[j]
+          result.append(item)
+        solution.append(result[2])
+      return solution
+    else:
+      print("The Matrix is incompatible")
   else:
-    print("The Matrix is incompatible")
+    print("The input is not a matrix")
 
     
 
